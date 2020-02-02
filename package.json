@@ -1,0 +1,42 @@
+{
+  "name": "mailbuddy",
+  "version": "0.1.0",
+  "description": "A simple scriptable e-mail assistant",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "./node_modules/.bin/tsc",
+    "dev": "./node_modules/.bin/concurrently 'npm:dev-*'",
+    "dev-buildwatch": "./node_modules/.bin/tsc -w",
+    "dev-autoreload": "./node_modules/.bin/nodemon",
+    "test": "echo \"Info: no test specified\" && exit 0",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webd97/mailbuddy.git"
+  },
+  "keywords": [
+    "imap",
+    "email",
+    "assistant"
+  ],
+  "author": "Christian Danscheid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webd97/mailbuddy/issues"
+  },
+  "homepage": "https://github.com/webd97/mailbuddy#readme",
+  "devDependencies": {
+    "@types/imap-simple": "^4.2.2",
+    "@types/node": "^13.5.2",
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "imap-simple": "^4.3.0"
+  }
+}
